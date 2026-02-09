@@ -11,7 +11,7 @@ dependencies:
   adnova_flutter_sdk:
     git:
       url: https://github.com/onvvjnmng-design/adplatform-flutter-sdk.git
-      ref: v1.0.0
+      ref: v1.0.1
 ```
 
 ثم نفذ:
