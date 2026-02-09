@@ -56,10 +56,10 @@
 /// // Then display with:
 /// NativeAdView(ad: _ad)
 /// ```
-library AdNova_flutter_sdk;
+library adnova_flutter_sdk;
 
 // Core
-export 'src/AdNova.dart';
+export 'src/adplatform.dart';
 
 // Models
 export 'src/models/ad.dart';
@@ -77,4 +77,3 @@ export 'src/widgets/banner_ad_widget.dart';
 export 'src/ads/interstitial_ad.dart';
 export 'src/ads/rewarded_ad.dart';
 export 'src/ads/native_ad.dart';
-

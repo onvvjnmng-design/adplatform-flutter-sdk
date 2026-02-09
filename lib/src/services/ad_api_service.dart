@@ -1,7 +1,6 @@
 ﻿import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import '../models/ad.dart';
 
@@ -89,9 +88,9 @@ class AdApiService {
     }
 
     // Get screen dimensions
-    final window = WidgetsBinding.instance.window;
-    final screenWidth = window.physicalSize.width ~/ window.devicePixelRatio;
-    final screenHeight = window.physicalSize.height ~/ window.devicePixelRatio;
+    final view = PlatformDispatcher.instance.views.first;
+    final screenWidth = view.physicalSize.width ~/ view.devicePixelRatio;
+    final screenHeight = view.physicalSize.height ~/ view.devicePixelRatio;
 
     // Get locale
     final locale = PlatformDispatcher.instance.locale;
@@ -111,4 +110,3 @@ class AdApiService {
     _client.close();
   }
 }
-

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../AdNova.dart';
+import '../adplatform.dart';
 import '../models/ad.dart';
 import '../listeners/ad_listener.dart';
 
@@ -206,9 +206,8 @@ class _InterstitialAdDialogState extends State<_InterstitialAdDialog> {
                           width: 32,
                           height: 32,
                           decoration: BoxDecoration(
-                            color: _canClose
-                                ? Colors.grey[300]
-                                : Colors.grey[100],
+                            color:
+                                _canClose ? Colors.grey[300] : Colors.grey[100],
                             shape: BoxShape.circle,
                           ),
                           child: Center(
@@ -315,4 +314,3 @@ class _InterstitialAdDialogState extends State<_InterstitialAdDialog> {
     );
   }
 }
-

@@ -41,4 +41,4 @@ typedef AdShownCallback = void Function();
 typedef AdClosedCallback = void Function();
 typedef RewardEarnedCallback = void Function(int amount, String type);
 typedef NativeAdLoadedCallback = void Function(Ad ad);
-
+typedef RewardedCallback = void Function(Reward reward);

@@ -9,6 +9,13 @@ class Ad {
   final String? callToAction;
   final String adType;
   final int? impressionId;
+  final Reward? reward;
+
+  /// Alias for callToAction
+  String? get ctaText => callToAction;
+
+  /// Alias for advertiser (defaults to 'Ad' if not provided)
+  String get advertiserName => title.split(' ').first;
 
   Ad({
     required this.id,
@@ -20,6 +27,7 @@ class Ad {
     this.callToAction,
     required this.adType,
     this.impressionId,
+    this.reward,
   });
 
   factory Ad.fromJson(Map<String, dynamic> json) {
@@ -33,6 +41,9 @@ class Ad {
       callToAction: json['call_to_action'] as String?,
       adType: json['ad_type'] as String,
       impressionId: json['impression_id'] as int?,
+      reward: json['reward'] != null
+          ? Reward.fromJson(json['reward'] as Map<String, dynamic>)
+          : null,
     );
   }
 
@@ -130,5 +141,11 @@ class Reward {
   final String type;
 
   Reward({required this.amount, required this.type});
-}
 
+  factory Reward.fromJson(Map<String, dynamic> json) {
+    return Reward(
+      amount: json['amount'] as int? ?? 10,
+      type: json['type'] as String? ?? 'coins',
+    );
+  }
+}

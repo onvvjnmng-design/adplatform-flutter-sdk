@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../AdNova.dart';
+import '../adplatform.dart';
 import '../models/ad.dart';
 import '../listeners/ad_listener.dart';
 
@@ -407,4 +407,3 @@ class _RewardedAdDialogState extends State<_RewardedAdDialog> {
     );
   }
 }
-

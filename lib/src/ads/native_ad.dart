@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../AdNova.dart';
+import '../adplatform.dart';
 import '../models/ad.dart';
 import '../listeners/ad_listener.dart';
 
@@ -245,7 +245,6 @@ class NativeAdView extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
-
                   if (ad.description != null) ...[
                     const SizedBox(height: 4),
                     Text(
@@ -255,7 +254,6 @@ class NativeAdView extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
-
                   if (ad.ctaText != null) ...[
                     const SizedBox(height: 12),
                     SizedBox(
@@ -334,18 +332,16 @@ class NativeAdView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Advertiser name (if available)
-                  if (ad.advertiserName != null) ...[
-                    Text(
-                      ad.advertiserName!,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey[500],
-                        fontWeight: FontWeight.w500,
-                      ),
+                  // Advertiser name
+                  Text(
+                    ad.advertiserName,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey[500],
+                      fontWeight: FontWeight.w500,
                     ),
-                    const SizedBox(height: 4),
-                  ],
+                  ),
+                  const SizedBox(height: 4),
 
                   Text(
                     ad.title,
@@ -434,4 +430,3 @@ enum NativeAdStyle {
   /// Large full-width ad (big image + detailed text + CTA)
   large,
 }
-

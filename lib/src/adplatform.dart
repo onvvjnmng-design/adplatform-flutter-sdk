@@ -1,5 +1,4 @@
-﻿import 'dart:io';
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 import 'services/ad_api_service.dart';
 
 /// AdNova SDK main class
