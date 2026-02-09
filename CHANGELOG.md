@@ -1,5 +1,17 @@
 ﻿# Changelog
 
+## [1.0.2] - 2026-02-10
+
+### Changed
+- Updated API base URL to production server (https://adnova.bbs.tr)
+- Simplified platform detection logic
+- Prepared for pub.dev publication
+
+## [1.0.1] - 2026-02-09
+
+### Fixed
+- Minor bug fixes and improvements
+
 ## [1.0.0] - 2026-02-09
 
 ### Added
