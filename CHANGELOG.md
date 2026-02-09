@@ -1,5 +1,14 @@
 ﻿# Changelog
 
+## [1.0.3] - 2026-02-10
+
+### Fixed
+- Fixed dart analyze errors for pub.dev validation
+- Fixed library file naming to match package name
+- Fixed imports and exports
+- Added missing Reward model properties
+- Added ctaText and advertiserName getters to Ad model
+
 ## [1.0.2] - 2026-02-10
 
 ### Changed
