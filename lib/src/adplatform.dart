@@ -14,8 +14,7 @@ import 'services/ad_api_service.dart';
 /// ```
 class AdNova {
   static String? _sdkKey;
-  static String _baseUrl =
-      'http://10.0.2.2:3000'; // Default for Android emulator
+  static String _baseUrl = 'https://adnova.bbs.tr'; // Production URL
   static bool _isInitialized = false;
   static AdApiService? _apiService;
 
@@ -50,14 +49,8 @@ class AdNova {
     // Set base URL based on platform
     if (baseUrl != null) {
       _baseUrl = baseUrl;
-    } else if (!kIsWeb) {
-      // For mobile platforms in debug mode
-      if (Platform.isAndroid) {
-        _baseUrl = 'http://10.0.2.2:3000'; // Android emulator localhost
-      } else if (Platform.isIOS) {
-        _baseUrl = 'http://localhost:3000'; // iOS simulator localhost
-      }
     }
+    // Default is https://adnova.bbs.tr (set above)
 
     _apiService = AdApiService(_baseUrl, sdkKey);
     _isInitialized = true;
@@ -83,4 +76,3 @@ class AdNova {
     }
   }
 }
-
