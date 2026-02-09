@@ -1,18 +1,18 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'services/ad_api_service.dart';
 
-/// AdPlatform SDK main class
+/// AdNova SDK main class
 ///
 /// Initialize in your main function:
 /// ```dart
 /// void main() async {
 ///   WidgetsFlutterBinding.ensureInitialized();
-///   await AdPlatform.initialize('YOUR_SDK_KEY');
+///   await AdNova.initialize('YOUR_SDK_KEY');
 ///   runApp(MyApp());
 /// }
 /// ```
-class AdPlatform {
+class AdNova {
   static String? _sdkKey;
   static String _baseUrl =
       'http://10.0.2.2:3000'; // Default for Android emulator
@@ -31,13 +31,13 @@ class AdPlatform {
   /// Check if SDK is initialized
   static bool get isInitialized => _isInitialized;
 
-  /// Initialize the AdPlatform SDK
+  /// Initialize the AdNova SDK
   ///
-  /// [sdkKey] - Your SDK key from the AdPlatform dashboard
+  /// [sdkKey] - Your SDK key from the AdNova dashboard
   /// [baseUrl] - Optional custom API base URL
   static Future<void> initialize(String sdkKey, {String? baseUrl}) async {
     if (_isInitialized) {
-      debugPrint('AdPlatform SDK already initialized');
+      debugPrint('AdNova SDK already initialized');
       return;
     }
 
@@ -62,7 +62,7 @@ class AdPlatform {
     _apiService = AdApiService(_baseUrl, sdkKey);
     _isInitialized = true;
 
-    debugPrint('AdPlatform SDK initialized successfully');
+    debugPrint('AdNova SDK initialized successfully');
   }
 
   /// Set custom base URL for the API
@@ -78,8 +78,9 @@ class AdPlatform {
   static void ensureInitialized() {
     if (!_isInitialized) {
       throw StateError(
-        'AdPlatform SDK not initialized. Call AdPlatform.initialize() first.',
+        'AdNova SDK not initialized. Call AdNova.initialize() first.',
       );
     }
   }
 }
+

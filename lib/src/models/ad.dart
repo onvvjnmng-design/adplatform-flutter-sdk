@@ -1,4 +1,4 @@
-/// Ad model class
+﻿/// Ad model class
 class Ad {
   final int id;
   final int campaignId;
@@ -131,3 +131,4 @@ class Reward {
 
   Reward({required this.amount, required this.type});
 }
+

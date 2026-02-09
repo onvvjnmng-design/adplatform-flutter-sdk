@@ -1,4 +1,4 @@
-/// AdPlatform Flutter SDK
+﻿/// AdNova Flutter SDK
 ///
 /// Complete SDK for displaying ads in Flutter apps.
 ///
@@ -6,11 +6,11 @@
 ///
 /// Initialize the SDK:
 /// ```dart
-/// import 'package:adplatform_flutter_sdk/adplatform_flutter_sdk.dart';
+/// import 'package:AdNova_flutter_sdk/AdNova_flutter_sdk.dart';
 ///
 /// void main() async {
 ///   WidgetsFlutterBinding.ensureInitialized();
-///   await AdPlatform.initialize(
+///   await AdNova.initialize(
 ///     sdkKey: 'your_sdk_key',
 ///     appId: 'your_app_id',
 ///   );
@@ -56,10 +56,10 @@
 /// // Then display with:
 /// NativeAdView(ad: _ad)
 /// ```
-library adplatform_flutter_sdk;
+library AdNova_flutter_sdk;
 
 // Core
-export 'src/adplatform.dart';
+export 'src/AdNova.dart';
 
 // Models
 export 'src/models/ad.dart';
@@ -77,3 +77,4 @@ export 'src/widgets/banner_ad_widget.dart';
 export 'src/ads/interstitial_ad.dart';
 export 'src/ads/rewarded_ad.dart';
 export 'src/ads/native_ad.dart';
+

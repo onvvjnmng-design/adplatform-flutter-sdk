@@ -1,8 +1,8 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../adplatform.dart';
+import '../AdNova.dart';
 import '../models/ad.dart';
 import '../listeners/ad_listener.dart';
 
@@ -42,7 +42,7 @@ class NativeAdLoader {
     if (_isLoading) return;
 
     try {
-      AdPlatform.ensureInitialized();
+      AdNova.ensureInitialized();
     } catch (e) {
       onAdFailed?.call(e.toString());
       return;
@@ -51,7 +51,7 @@ class NativeAdLoader {
     _isLoading = true;
 
     try {
-      final ad = await AdPlatform.apiService?.requestAd('native');
+      final ad = await AdNova.apiService?.requestAd('native');
 
       if (ad != null) {
         onAdLoaded?.call(ad);
@@ -86,7 +86,7 @@ class NativeAdView extends StatelessWidget {
 
     // Track click
     if (ad.impressionId != null) {
-      AdPlatform.apiService?.trackClick(ad.id, ad.impressionId!);
+      AdNova.apiService?.trackClick(ad.id, ad.impressionId!);
     }
 
     // Open URL
@@ -434,3 +434,4 @@ enum NativeAdStyle {
   /// Large full-width ad (big image + detailed text + CTA)
   large,
 }
+

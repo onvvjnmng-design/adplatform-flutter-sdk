@@ -1,4 +1,4 @@
-import '../models/ad.dart';
+﻿import '../models/ad.dart';
 
 /// Listener for ad events
 abstract class AdListener {
@@ -41,3 +41,4 @@ typedef AdShownCallback = void Function();
 typedef AdClosedCallback = void Function();
 typedef RewardEarnedCallback = void Function(int amount, String type);
 typedef NativeAdLoadedCallback = void Function(Ad ad);
+

@@ -1,8 +1,8 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../adplatform.dart';
+import '../AdNova.dart';
 import '../models/ad.dart';
 import '../listeners/ad_listener.dart';
 
@@ -49,7 +49,7 @@ class RewardedAd {
     if (_isLoading) return;
 
     try {
-      AdPlatform.ensureInitialized();
+      AdNova.ensureInitialized();
     } catch (e) {
       onAdFailed?.call(e.toString());
       return;
@@ -58,7 +58,7 @@ class RewardedAd {
     _isLoading = true;
 
     try {
-      final ad = await AdPlatform.apiService?.requestAd('rewarded');
+      final ad = await AdNova.apiService?.requestAd('rewarded');
 
       if (ad != null) {
         _ad = ad;
@@ -158,7 +158,7 @@ class _RewardedAdDialogState extends State<_RewardedAdDialog> {
 
     // Track click
     if (widget.ad.impressionId != null) {
-      AdPlatform.apiService?.trackClick(widget.ad.id, widget.ad.impressionId!);
+      AdNova.apiService?.trackClick(widget.ad.id, widget.ad.impressionId!);
     }
 
     // Open URL
@@ -407,3 +407,4 @@ class _RewardedAdDialogState extends State<_RewardedAdDialog> {
     );
   }
 }
+

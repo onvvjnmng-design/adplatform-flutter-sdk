@@ -1,4 +1,4 @@
-# Changelog
+﻿# Changelog
 
 ## [1.0.0] - 2026-02-09
 
@@ -19,3 +19,4 @@
 - Pre-loading support for interstitial and rewarded ads
 - Test mode for development
 - Comprehensive error handling
+

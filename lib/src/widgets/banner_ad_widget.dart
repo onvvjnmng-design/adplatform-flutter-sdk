@@ -1,8 +1,8 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../adplatform.dart';
+import '../AdNova.dart';
 import '../models/ad.dart';
 import '../listeners/ad_listener.dart';
 
@@ -59,7 +59,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     if (_isLoading) return;
 
     try {
-      AdPlatform.ensureInitialized();
+      AdNova.ensureInitialized();
     } catch (e) {
       widget.onAdFailed?.call(e.toString());
       return;
@@ -68,7 +68,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     setState(() => _isLoading = true);
 
     try {
-      final ad = await AdPlatform.apiService?.requestAd('banner');
+      final ad = await AdNova.apiService?.requestAd('banner');
 
       if (mounted) {
         setState(() {
@@ -107,7 +107,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
 
     // Track click
     if (ad.impressionId != null) {
-      AdPlatform.apiService?.trackClick(ad.id, ad.impressionId!);
+      AdNova.apiService?.trackClick(ad.id, ad.impressionId!);
     }
 
     // Open URL
@@ -187,3 +187,4 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     );
   }
 }
+

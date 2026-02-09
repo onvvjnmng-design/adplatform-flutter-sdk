@@ -1,7 +1,7 @@
-name: adplatform_flutter_sdk
-description: AdPlatform Flutter SDK for displaying ads in Flutter applications
+﻿name: adnova_flutter_sdk
+description: AdNova Flutter SDK for displaying ads in Flutter applications
 version: 1.0.0
-homepage: https://github.com/adplatform/flutter-sdk
+homepage: https://github.com/onvvjnmng-design/adplatform-flutter-sdk
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -23,7 +23,8 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.adplatform.flutter_sdk
-        pluginClass: AdplatformFlutterSdkPlugin
+        package: com.adnova.flutter_sdk
+        pluginClass: AdNovaFlutterSdkPlugin
       ios:
-        pluginClass: AdplatformFlutterSdkPlugin
+        pluginClass: AdNovaFlutterSdkPlugin
+

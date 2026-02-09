@@ -1,4 +1,4 @@
-# AdPlatform Flutter SDK
+﻿# AdNova Flutter SDK
 
 مكتبة إعلانات لتطبيقات Flutter
 
@@ -8,16 +8,9 @@
 
 ```yaml
 dependencies:
-  adplatform_flutter_sdk: ^1.0.0
-```
-
-أو من Git:
-
-```yaml
-dependencies:
-  adplatform_flutter_sdk:
+  adnova_flutter_sdk:
     git:
-      url: https://github.com/adplatform/flutter-sdk.git
+      url: https://github.com/onvvjnmng-design/adplatform-flutter-sdk.git
       ref: v1.0.0
 ```
 
@@ -32,12 +25,12 @@ flutter pub get
 ### التهيئة
 
 ```dart
-import 'package:adplatform_flutter_sdk/adplatform_flutter_sdk.dart';
+import 'package:adnova_flutter_sdk/adnova_flutter_sdk.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  await AdPlatform.initialize('YOUR_SDK_KEY');
+  await AdNova.initialize('YOUR_SDK_KEY');
   
   runApp(MyApp());
 }
@@ -75,3 +68,4 @@ rewardedAd.show();
 ## الترخيص
 
 MIT License
+

@@ -1,8 +1,8 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../adplatform.dart';
+import '../AdNova.dart';
 import '../models/ad.dart';
 import '../listeners/ad_listener.dart';
 
@@ -46,7 +46,7 @@ class InterstitialAd {
     if (_isLoading) return;
 
     try {
-      AdPlatform.ensureInitialized();
+      AdNova.ensureInitialized();
     } catch (e) {
       onAdFailed?.call(e.toString());
       return;
@@ -55,7 +55,7 @@ class InterstitialAd {
     _isLoading = true;
 
     try {
-      final ad = await AdPlatform.apiService?.requestAd('interstitial');
+      final ad = await AdNova.apiService?.requestAd('interstitial');
 
       if (ad != null) {
         _ad = ad;
@@ -146,7 +146,7 @@ class _InterstitialAdDialogState extends State<_InterstitialAdDialog> {
 
     // Track click
     if (widget.ad.impressionId != null) {
-      AdPlatform.apiService?.trackClick(widget.ad.id, widget.ad.impressionId!);
+      AdNova.apiService?.trackClick(widget.ad.id, widget.ad.impressionId!);
     }
 
     // Open URL
@@ -315,3 +315,4 @@ class _InterstitialAdDialogState extends State<_InterstitialAdDialog> {
     );
   }
 }
+

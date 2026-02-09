@@ -1,11 +1,11 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import '../models/ad.dart';
 
-/// API service for AdPlatform
+/// API service for AdNova
 class AdApiService {
   String _baseUrl;
   final String _sdkKey;
@@ -45,7 +45,7 @@ class AdApiService {
 
       return null;
     } catch (e) {
-      debugPrint('AdPlatform: Error requesting ad: $e');
+      debugPrint('AdNova: Error requesting ad: $e');
       return null;
     }
   }
@@ -65,7 +65,7 @@ class AdApiService {
 
       return response.statusCode == 200;
     } catch (e) {
-      debugPrint('AdPlatform: Error tracking click: $e');
+      debugPrint('AdNova: Error tracking click: $e');
       return false;
     }
   }
@@ -111,3 +111,4 @@ class AdApiService {
     _client.close();
   }
 }
+
