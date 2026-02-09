@@ -50,7 +50,7 @@ class AdApiService {
   }
 
   /// Track ad click
-  Future<bool> trackClick(int adId, int impressionId) async {
+  Future<bool> trackClick(dynamic adId, String? impressionId) async {
     try {
       final response = await _client.post(
         Uri.parse('$_baseUrl/api/sdk/click'),

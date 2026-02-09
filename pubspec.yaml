@@ -1,6 +1,6 @@
 ﻿name: adnova_flutter_sdk
 description: AdNova Flutter SDK - Display banner, interstitial, rewarded and native ads in your Flutter apps. Easy integration with callbacks.
-version: 1.0.3
+version: 1.0.4
 homepage: https://adnova.bbs.tr
 repository: https://github.com/onvvjnmng-design/adplatform-flutter-sdk
 issue_tracker: https://github.com/onvvjnmng-design/adplatform-flutter-sdk/issues

@@ -1,6 +1,6 @@
 ﻿/// Ad model class
 class Ad {
-  final int id;
+  final dynamic id;
   final int campaignId;
   final String title;
   final String? description;
@@ -8,7 +8,7 @@ class Ad {
   final String targetUrl;
   final String? callToAction;
   final String adType;
-  final int? impressionId;
+  final String? impressionId;
   final Reward? reward;
 
   /// Alias for callToAction
@@ -31,19 +31,31 @@ class Ad {
   });
 
   factory Ad.fromJson(Map<String, dynamic> json) {
+    // Parse reward from separate fields or object
+    Reward? reward;
+    if (json['reward'] != null) {
+      reward = Reward.fromJson(json['reward'] as Map<String, dynamic>);
+    } else if (json['reward_amount'] != null || json['reward_type'] != null) {
+      reward = Reward(
+        amount: json['reward_amount'] as int? ?? 10,
+        type: json['reward_type'] as String? ?? 'coins',
+      );
+    }
+
     return Ad(
-      id: json['id'] as int,
-      campaignId: json['campaign_id'] as int,
+      id: json['id'],
+      campaignId: json['campaign_id'] as int? ?? 0,
       title: json['title'] as String,
       description: json['description'] as String?,
       imageUrl: json['image_url'] as String,
-      targetUrl: json['target_url'] as String,
-      callToAction: json['call_to_action'] as String?,
-      adType: json['ad_type'] as String,
-      impressionId: json['impression_id'] as int?,
-      reward: json['reward'] != null
-          ? Reward.fromJson(json['reward'] as Map<String, dynamic>)
-          : null,
+      // Support both click_url and target_url
+      targetUrl: (json['click_url'] ?? json['target_url']) as String,
+      // Support both cta_text and call_to_action
+      callToAction: (json['cta_text'] ?? json['call_to_action']) as String?,
+      // Support both type and ad_type
+      adType: (json['type'] ?? json['ad_type']) as String,
+      impressionId: json['impression_id']?.toString(),
+      reward: reward,
     );
   }
 
